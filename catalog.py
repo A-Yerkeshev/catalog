@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 from flask_login import LoginManager, login_required, login_user
 from flask_login import logout_user, current_user
@@ -265,7 +266,8 @@ def send_json():
     return jsonify(response)
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
     app.debug = True
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=port)
 
 session.close()
