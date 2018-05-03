@@ -52,8 +52,8 @@ def register():
             return render_template('users.html').format(
                 get_categories(), 'Register new user', '''! Passwords does not
                 match''', rep_form, 'Register')
-        if session.query(User).filter_by(username=username).first()
-        is not None:
+        if session.query(User).filter_by(
+            username=username).first() is not None:
             return render_template('users.html').format(
                 get_categories(), 'Register new user', '! User already exist',
                 rep_form, 'Register')
@@ -158,8 +158,8 @@ def get_description(category, id):
         Item.description, Item.name, Item.image, Item.user_id).filter_by(
             id=id).first()
     if query[2] is not None:
-        image = '<img src="/static/img/uploads/' + str(query[2]) +
-        '" alt="item-image" class="item-image">'
+        image = '<img src="/static/img/uploads/'
+        + str(query[2]) + '" alt="item-image" class="item-image">'
     else:
         image = ''
     return render_template(
