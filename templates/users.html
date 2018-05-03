@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+		<link href="{{url_for('static', filename='css/main.css')}}" type="text/css"
+		rel="stylesheet">
+		<link href="{{url_for('static', filename='css/mobile.css')}}" 
+		media="screen and (max-width:600px)" type="text/css" rel="stylesheet">
+		<title>Catalog app</title>
+	</head>
+	<body>
+		<header class='header'>
+			<h1 class='title'>Catalog app</h1>
+		</header>
+		<div class="whiteLine"></div>
+		<nav class="nav">
+			<a href=../><button class="button">Home page</button></a>
+			{% if current_user.is_authenticated == False %}
+			<div class="log">
+				<a href="/register">
+					<button class="button" style="margin:0px">Register</button>
+				</a>
+				<a href="/login">
+					<button class="button" style="margin:0px">Log in</button>
+				</a>
+			</div>
+			{% endif %}
+			{% if current_user.is_authenticated == True %}
+			<div class="log">
+				<a href="/logout">
+					<button class="button" style="margin:0px">Log out</button>
+				</a>
+			</div>
+			{% endif %}
+			</div>
+		</nav>
+		<ul class="categories">
+			<h2>Categories</h2>
+			{}
+		</ul>
+		<ul class="items">
+			<a href="/."><button class="back"></button></a>
+			<h2>{}</h2>
+			<span class="error">{}</span>
+			<form action="" method="post" class="form">
+				<label for="username">Username:</label>
+				<input type="text" name="username" class="input" required maxlength=50>
+				<label for="password">Password:</label>
+				<input type="password" name="password" class="input" required maxlength=50>
+				{}
+				<button class="button emp" type="submit" id="submit" type="submit">{}
+					</button>
+			</form>
+		</ul>
+		<footer></footer>
+	</body>
+</html>

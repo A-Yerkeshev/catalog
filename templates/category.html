@@ -1,0 +1,56 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+		<link href="{{url_for('static', filename='css/main.css')}}" type="text/css"
+		rel="stylesheet">
+		<link href="{{url_for('static', filename='css/mobile.css')}}" 
+		media="screen and (max-width:600px)" type="text/css" rel="stylesheet">
+		<title>Catalog app</title>
+	</head>
+	<body>
+		<header class='header'>
+			<h1 class='title'>Catalog app</h1>
+		</header>
+		<div class="whiteLine"></div>
+		<nav class="nav">
+			<a href=../><button class="button">Home page</button></a>
+			{% if current_user.is_authenticated == False %}
+			<div class="log">
+				<a href="/register">
+					<button class="button" style="margin:0px">Register</button>
+				</a>
+				<a href="/login">
+					<button class="button" style="margin:0px">Log in</button>
+				</a>
+			</div>
+			{% endif %}
+			{% if current_user.is_authenticated == True %}
+			<div class="log">
+				<a href="/logout">
+					<button class="button" style="margin:0px">Log out</button>
+				</a>
+			</div>
+			{% endif %}
+		</nav>
+		<ul class="categories">
+			<h2>Categories</h2>
+			{}
+		</ul>
+		<ul class="items">
+			{% if current_user.is_authenticated %}
+			<a href='/add'><button class="button emp" style="float:right">Add new item</button></a>
+			{% endif %}
+			<h2>{} category items</h2>
+			<span class="extra count">{} items in this category</span>
+			{}
+		</ul>
+		{% if current_user.is_authenticated %}
+		<aside class="side">
+			<h3 class="profile">You logged as {}</h3>
+		</aside>
+		{% endif %}
+		<footer></footer>
+	</body>
+</html>

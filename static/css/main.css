@@ -1,0 +1,171 @@
+body{
+	background-color: whitesmoke;
+}
+footer{
+	height:10px;
+	clear: both;
+}
+h2 {
+	font-family:serif;
+	-webkit-text-fill-color: darkblue;
+	font-style: italic;
+}
+.header {
+	background-color: royalblue;
+}
+.title {
+	-webkit-text-fill-color: white;
+	border: 10px;
+	margin-left: 10%;
+	font-family: serif;
+	margin-bottom: 0px;
+}
+.whiteLine {
+	background-color: white;
+	height:10px;
+}
+.nav {
+	overflow:auto;
+	background-color: silver;
+}
+.log {
+	float: right;
+	background-color: royalblue;
+	border: 5px double orange;
+	overflow: visible;
+}
+.button {
+	border-color: royalblue;
+	float:left;
+	margin:5px;
+	margin-left: 5%;
+	background-color: white;
+	-webkit-text-fill-color: royalblue;
+	font-weight: bold;
+	font-family: serif;
+}
+.emp {
+	background-color: orange;
+	-webkit-text-fill-color: darkred;
+}
+.error {
+	-webkit-text-fill-color: red;
+	display: block;
+}
+.back {
+	float: left;
+	width:50px;
+	height:50px;
+	margin:5px;
+	background-image: url('/static/img/back.jpg');
+}
+.categories {
+	background-color: white;
+	float: left;
+	margin-left: 5%;
+	height:100%;
+	list-style-type: none;
+	border: double;
+	width:25%;
+	margin-top:1px;
+	margin-bottom:1px;
+	padding-left:1%;
+	clear:left;
+	overflow:hidden;
+}
+.category {
+	-webkit-text-fill-color: royalblue;
+	text-decoration:none;
+	font-family: serif;
+	font-weight: bold;
+}
+.items {
+	background-color: white;
+	float: left;
+	height:100%;
+	list-style-type: none;
+	border: double;
+	width: 50%;
+	margin-top:1px;
+	margin-bottom:1px;
+	overflow:hidden;
+}
+.item {
+	-webkit-text-fill-color: royalblue;
+	text-decoration:none;
+	font-family: serif;
+	font-weight: bold;
+}
+.side {
+	background-color: white;
+	width: 10%;
+	border: double;
+	float: left;
+	font-family: serif;
+	font-weight: bold;
+	-webkit-text-fill-color: royalblue;
+	overflow: hidden;
+}
+.profile {
+	margin: 5px;
+	margin-left: 15px;
+	font-family: serif;
+	-webkit-text-fill-color: darkblue;
+	font-style: italic;
+}
+.extra {
+	-webkit-text-fill-color: grey;	
+	font-style: italic;
+}
+.count {
+	display: block;
+	padding-bottom: 20px;
+}
+.form {
+	clear: left;
+	-webkit-text-fill-color: royalblue;
+	font-family: serif;
+	font-weight: bold;
+	border: double royalblue;
+	padding: 5px;
+	overflow:  auto;
+	display: inline-block;
+}
+.input {
+	margin-left:20px;
+	border: 1px solid;
+	border-color: royalblue;
+	margin: 1px;
+	display: block;
+	-webkit-text-fill-color: darkblue;
+	font-family: serif;
+	font-size: 16px;
+	width: 400px;
+}
+.desc {
+	width: 400px;
+	height: 400px;
+	text-align: top;
+}
+.description {
+	background-color: white;
+	float: left;
+	height:100%;
+	border: double;
+	width:50%;
+	margin-top:1px;
+	margin-bottom:1px;
+	text-align:center;
+	overflow:hidden;
+}
+.text {
+	-webkit-text-fill-color: royalblue;
+	font-family: serif;
+}
+.item-image {
+	width: 350px;
+	float: left;
+	margin: 10px;
+	border: solid 5px;
+	border-color: royalblue;
+}

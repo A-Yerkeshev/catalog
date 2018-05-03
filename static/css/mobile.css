@@ -1,0 +1,57 @@
+.categories {
+	background-color: white;
+	float: left;
+	margin-left: 0px;
+	height:100%;
+	list-style-type: none;
+	border: double;
+	margin-top:1px;
+	margin-bottom:1px;
+	clear:left;
+	width: 100%;
+	padding-left:0px;
+}
+.category {
+	-webkit-text-fill-color: royalblue;
+	text-decoration:none;
+	font-family: serif;
+	font-weight: bold;
+}
+.items {
+	background-color: white;
+	float: left;
+	height:100%;
+	list-style-type: none;
+	border: double;
+	margin-top:1px;
+	margin-bottom:1px;
+	width: 100%;
+	padding-left:0px;
+}
+.item {
+	-webkit-text-fill-color: royalblue;
+	text-decoration:none;
+	font-family: serif;
+}
+.side {
+	width: 50%;
+}
+.input {
+	width: 300px;
+}
+.desc {
+	width: 300px;
+}
+.description {
+	width: 100%;
+	background-color: white;
+	float: left;
+	height:100%;
+	border: double;
+	margin-top:1px;
+	margin-bottom:1px;
+	text-align:center;
+}
+.item-image {
+	width: 250px;
+}

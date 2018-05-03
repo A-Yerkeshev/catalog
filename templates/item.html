@@ -1,0 +1,78 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+		<link href="{{url_for('static', filename='css/main.css')}}" type="text/css"
+		rel="stylesheet">
+		<link href="{{url_for('static', filename='css/mobile.css')}}" 
+		media="screen and (max-width:600px)" type="text/css" rel="stylesheet">
+		<title>Catalog app</title>
+	</head>
+	<body>
+		<header class='header'>
+			<h1 class='title'>Catalog app</h1>
+		</header>
+		<div class="whiteLine"></div>
+		<nav class="nav">
+			<a href=../><button class="button">Home page</button></a>
+			{% if current_user.is_authenticated == False %}
+			<div class="log">
+				<a href="/register">
+					<button class="button" style="margin:0px">Register</button>
+				</a>
+				<a href="/login">
+					<button class="button" style="margin:0px">Log in</button>
+				</a>
+			</div>
+			{% endif %}
+			{% if current_user.is_authenticated == True %}
+			<div class="log">
+				<a href="/logout">
+					<button class="button" style="margin:0px">Log out</button>
+				</a>
+			</div>
+			{% endif %}
+		</nav>
+		<ul class="categories">
+			<h2>Categories</h2>
+			{}
+		</ul>
+		<ul class="items">
+			<a href="/."><button class="back"></button></a>
+			<h2>{} item</h2>
+			<form action="" method="post" enctype="multipart/form-data" class="form">
+				<label for="item-name">Item name:</label>
+				<input type="text" name="name" class="input" required maxlength=50 value='{{ name }}'>
+				<label for="category">Category:</label>
+				<select name="category" class="input" required>
+					<option value="Accessories"{% if category=='Accessories' %} selected="selected"{% endif %}>Accessories</option>
+					<option value="Antiques"{% if category=='Antiques' %} selected="selected"{% endif %}>Antiques</option>
+					<option value="Art"{% if category=='Art' %} selected="selected"{% endif %}>Art</option>
+					<option value="Audio & video"{% if category=='Audio & video' %} selected="selected"{% endif %}>Audio & video</option>
+					<option value="Clothing"{% if category=='Clothing' %} selected="selected"{% endif %}>Clothing</option>
+					<option value="Collectibles"{% if category=='Collectibles' %} selected="selected"{% endif %}>Collectibles</option>
+					<option value="Cosmetics"{% if category=='Cosmetics' %} selected="selected"{% endif %}>Cosmetics</option>
+					<option value="Electronics"{% if category=='Electronics' %} selected="selected"{% endif %}>Electronics</option>
+					<option value="Entertainment"{% if category=='Entertainment' %} selected="selected"{% endif %}>Entertainment</option>
+					<option value="Footwear"{% if category=='Footwear' %} selected="selected"{% endif %}>Footwear</option>
+					<option value="Food"{% if category=='Food' %} selected="selected"{% endif %}>Food</option>
+					<option value="Handbags & luggage"{% if category=='Handbags & luggage' %} selected="selected"{% endif %}>Handbags & luggage</option>
+					<option value="Household supplies"{% if category=='Household supplies' %} selected="selected"{% endif %}>Household supplies</option>
+					<option value="Sport"{% if category=='Sport' %} selected="selected"{% endif %}>Sport</option>
+				</select>
+				<label for="image">Image:</label>
+				<input type="file" class="input" name="image" accept="image/*">
+				<label for="description">Description:</label>
+				<textarea type="text" name="description" class="input desc" required maxlength=250>{{ description }}</textarea>
+				<button class="button emp" type="submit" id="submit" type="submit">Add</button>
+			</form>
+		</ul>
+		{% if current_user.is_authenticated %}
+		<aside class="side">
+			<h3 class="profile">You logged as {}</h3>
+		</aside>
+		{% endif %}
+		<footer></footer>
+	</body>
+</html>
