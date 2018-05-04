@@ -82,13 +82,17 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         user = session.query(User).filter_by(username=username).first()
-        if verify_password(password, user.pass_hash):
-            login_user(user)
-            return redirect(url_for('main'))
-        else:
-            return render_template('users.html').format(
-                get_categories(), 'Log in', '''! Username or password is
-                incorrect''', '', 'Log in')
+		if user != None:
+			if verify_password(password, user.pass_hash):
+				login_user(user)
+				return redirect(url_for('main'))
+			else:
+				return render_template('users.html').format(
+					get_categories(), 'Log in', '''! Username or password is
+					incorrect''', '', 'Log in')
+		else:
+			return render_template('users.html').format(
+				get_categories(), 'Log in', '''! User does not exist''', '', 'Log in')			
     else:
         return render_template('users.html').format(
             get_categories(), 'Log in', '', '', 'Log in')
