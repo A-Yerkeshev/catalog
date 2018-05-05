@@ -163,8 +163,7 @@ def get_description(category, id):
         Item.description, Item.name, Item.image, Item.user_id).filter_by(
             id=id).first()
     if query[2] is not None:
-        image = '<img src="/static/img/uploads/'
-        + str(query[2]) + '" alt="item-image" class="item-image">'
+        image = '<img src="/static/img/uploads/' + str(query[2]) + '" alt="item-image" class="item-image">'
     else:
         image = ''
     return render_template(
